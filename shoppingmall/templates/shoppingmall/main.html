@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 
+{% load static %}
 
 {% block content %}
 
 {% include 'shared/_navbar.html' %}
 
+<h1>
+    Welcome
+</h1>
+
 <h3>
     <a href='{% url "list:address" %}'>address</a>
     <a href='{% url "list:fax" %}'>fax</a>
 </h3>
+
+<img src="{% static 'images/shoppingmall.PNG' %}">
+
 
 {% endblock %}
