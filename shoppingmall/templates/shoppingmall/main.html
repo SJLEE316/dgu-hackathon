@@ -1,6 +1,13 @@
+{% extends 'base.html' %}
 
+
+{% block content %}
+
+{% include 'shared/_navbar.html' %}
 
 <h3>
     <a href='{% url "list:address" %}'>address</a>
     <a href='{% url "list:fax" %}'>fax</a>
 </h3>
+
+{% endblock %}
