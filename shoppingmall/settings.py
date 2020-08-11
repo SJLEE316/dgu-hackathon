@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'list',
     'posts',
+    'reviews',
 
     'django.contrib.sites',
 
@@ -131,7 +132,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'myblog','media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'shoppingmall','media')
 
 AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.ModelBackend',
