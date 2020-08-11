@@ -11,6 +11,7 @@ def create(request):
         title=request.POST.get('title')
         content=request.POST.get('content')
         Post.objects.create(title=title, content=content)
+        user = request.user
     return redirect('posts:main')    
 
 def main(request):
