@@ -5,7 +5,7 @@ app_name= "posts"
 urlpatterns = [
     path('new/', new, name="new"),
     path('create/', create, name="create"),
-    path('main/', main, name="main"),
-    
+    path('main/', main, name="main"),   
     path('show/<int:id>', show, name="show"),
+    path('update/<int:id>', update, name="update"),
 ]
