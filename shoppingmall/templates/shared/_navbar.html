@@ -1,5 +1,5 @@
  <nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" href="#">SOJUNG MALL ꗯ</a>
+  <a class="navbar-brand" href="{% url 'main' %}">SOJUNG MALL ꗯ</a>
   <div>
     <ul class="nav">
       <li class="nav-item">
@@ -14,19 +14,16 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'posts:main' %}">니트/가디건</a>
-          <a class="dropdown-item" href="#">맨투맨/후드/티셔츠</a>
-          <a class="dropdown-item" href="#">셔츠/블라우스</a>
+          <a class="dropdown-item" href="{% url 'posts:main2' %}">맨투맨/후드/티셔츠</a>
+          <a class="dropdown-item" href="{% url 'posts:main3' %}">셔츠/블라우스</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           BOTTOM
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">데님</a>
-          <a class="dropdown-item" href="#">면바지/슬랙스</a>
-          <a class="dropdown-item" href="#">쇼츠</a>
-          <a class="dropdown-item" href="#">롱버젼</a>
-
+          <a class="dropdown-item" href="{% url 'posts:main4' %}">데님</a>
+          <a class="dropdown-item" href="{% url 'posts:main5' %}">면바지/슬랙스</a>
         </div>
       </li>
     </ul>
