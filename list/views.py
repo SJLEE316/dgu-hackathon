@@ -7,3 +7,6 @@ def address(request):
 
 def fax(request):
     return render(request, 'list/fax.html')
+
+def login(request):
+    return render(request, 'list/login.html')    

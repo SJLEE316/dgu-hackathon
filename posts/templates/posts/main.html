@@ -2,10 +2,11 @@
 {% load static %}
 {% block content %}
 
-    <div class="container">
-        <h1>글 목록입니다.</h1>
-        <a href="{% url 'posts:new' %}" class="btn btn-primary">글 작성하기</a>
-        <div class="row">
+    {% if user.is_authenticated %}
+        <div class="container">
+            <h1>글 목록입니다.</h1>
+            <a href="{% url 'posts:new' %}" class="btn btn-primary">글 작성하기</a>
+            <div class="row">
 
         {% for post in posts %}
 
@@ -23,5 +24,11 @@
         {% endfor %}
         </div>
     </div>
+
+    {% else %}
+        <h3> 로그인 이후 이용 가능합니다.</h3>
+        <a href="{% url 'account_login' %}" class="btn btn-warning"> 로그인</a>
+        <a href="{% url 'account_signup' %}" class="btn btn-warning"> 회원가입</a>
+    {% endif %}
 
 {% endblock %} 

@@ -32,18 +32,45 @@
 
   <div>
     <ul class="nav justify-content-end">
+      {% if user.is_authenticated %}
+
       <li class="nav-item">
-        <a class="nav-link active" href="#">LOGIN</a>
+        <a class="nav-link" href="{%url 'account_logout' %}">로그아웃</a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="#">JOIN</a>
+        <a class="nav-link" href="{% url 'account_change_password' %}">비밀번호 변경</a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">ORDER</a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">CART</a>
       </li>
+
+      {%else%}
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'account_login' %}">로그인</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'account_signup' %}" >회원가입</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'list:login' %}">ORDER</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'list:login' %}">CART</a>
+      </li>
+
+      {% endif %}      
+      
+      
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
