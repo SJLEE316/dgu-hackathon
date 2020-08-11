@@ -10,12 +10,17 @@
     Welcome
 </h1>
 
-<h3>
+<img src="{% static 'images/shoppingmall.PNG' %}">
+
+
+<h6>
     <a href='{% url "list:address" %}'>address</a>
     <a href='{% url "list:fax" %}'>fax</a>
-</h3>
+</h6>
 
-<img src="{% static 'images/shoppingmall.PNG' %}">
+<hr>
+
+{% include 'shared/_navbar2.html' %}
 
 
 {% endblock %}
