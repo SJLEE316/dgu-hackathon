@@ -3,6 +3,8 @@ from .models import Post
 
 def new(request):
     return render(request, 'posts/new.html')
+    image=request.FILES.get('image')
+    Post.objects.create(title=title, content=content, image=image)
 
 def create(request):
     if request.method == "POST":
@@ -24,6 +26,7 @@ def update(request, id):
     if request.method=="POST":
         post.title=request.POST['title']    
         post.content=request.POST['content']
+        post.image=request.FILES.get('image')
         post.save()
         return redirect('posts:show',post.id)
     return render(request, 'posts/update.html', {"post":post})
