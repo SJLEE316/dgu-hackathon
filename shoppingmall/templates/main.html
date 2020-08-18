@@ -1,3 +1,10 @@
+<style>
+  img {
+    width : 500;
+    height : 600;
+  }
+</style>
+
 {% extends 'base.html' %}
 
 {% load static %}
@@ -5,21 +12,88 @@
 {% block content %}
 
 {% include 'shared/_navbar.html' %}
-<br><br><br>
+<br><br><br><br><br>
+
+<img src="{% static 'images/modelpic.PNG' %}">
+<img src="{% static 'images/modelpic2.PNG' %}">
+<img src="{% static 'images/modelpic3.PNG' %}">
+
+
+
 
 <h1>
-    Welcome
+  TODAY
 </h1>
+<h2>
+  FREE DELIVER
+</h2>
 
-<img src="{% static 'images/shoppingmall.PNG' %}">
-<img src="{% static 'images/modelpic.PNG' %}">
-
-
-
-<h6>
-    <a href='{% url "list:address" %}'>address</a>
-    <a href='{% url "list:fax" %}'>fax</a>
-</h6>
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{% static 'images/burberry.PNG' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">티셔츠</h5>
+        <p class="card-text">흰색</p>
+        <a class="btn btn-sm btn-outline-secondary" href="/posts/show/9">자세히보기</a>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <hr>
 

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>상세보기 페이지</h1>
+    <h3>상품명 : {{ review.title }} </h3><br>
+    <h3>설명 : {{ review.content }} </h3><br>
+    <h3>작성 시각 : {{ review.created_at }} </h3><br>
+
+    {% if review.user %}
+        <h3> 작성자 : {{ review.user }}</h3><br>
+    {% else %}
+        <h3> 작성자 : 알수없음 </h3><br>
+    {% endif %}
+
+    {% if review.image %}
+	    <img src ="{{ review.image.url }}">
+    {%  endif %}
+
+    <br>
+    
+    {% if user == review.user %}
+    <a href="{% url 'reviews:update' review.pk %}" class="btn btn-primary"> 수정 </a>
+    <a href="{% url 'reviews:delete' review.pk %}" class="btn btn-danger"> 삭제 </a>
+    {% endif %}
+
+    <a href="{% url 'reviews:main'%}" class="btn btn-primary to-main"> To Main </a>
+
+
+
+{% endblock %}

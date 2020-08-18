@@ -4,15 +4,17 @@ from .models import Post
 def new(request):
     return render(request, 'posts/new.html')
     image=request.FILES.get('image')
-    Post.objects.create(title=title, content=content, image=image)
+    Post.objects.create(title=title, content=content, price=price, stock=stock, image=image)
 
 def create(request):
     if request.method == "POST":
         title=request.POST.get('title')
         content=request.POST.get('content')
+        price=request.POST.get('price')
+        stock=request.POST.get('stock')
         image=request.FILES.get('image')
         user = request.user
-        Post.objects.create(title=title, content=content, image=image, user=user)
+        Post.objects.create(title=title, content=content, price=price, stock=stock, image=image, user=user)
     return redirect('posts:main')    
 
 def main(request):
@@ -30,6 +32,8 @@ def update(request, id):
     if request.method=="POST":
         post.title=request.POST['title']    
         post.content=request.POST['content']
+        post.price=request.POST['price']
+        post.stock=request.POST['stock']     
         post.image=request.FILES.get('image')
         post.save()
         return redirect('posts:show',post.id)

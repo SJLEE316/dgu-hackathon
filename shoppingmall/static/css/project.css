@@ -1,3 +1,56 @@
-h1 {
-    color : pink;
- }
+h1, h2{
+    color:brown;
+    text-align : center;
+    font-weight : bold;
+}
+
+.navbar-brand {
+    font-size:30px;
+    font-weight:bold;
+}
+
+.input-group{
+    padding-top : 5px;
+}
+
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+  }
+.blog-footer p:last-child {
+    margin-bottom: 0;
+  }
+
+.footer ul li {
+    position: relative;
+    display: inline-block;
+    color: #555;
+    box-sizing: border-box;
+    vertical-align: top;
+    text-align: left;
+    text-align : left;
+}
+
+.footer ul li .box {
+    padding: 0 5%;
+    font-size: 11px;
+    line-height: 20px;
+    padding: 50px 0 40px;
+}
+
+.footer ul.costom li {
+    width: 17%;
+}
+
+.footer{
+    background: #555555;
+
+}
+
+.box{
+    color: #ffffff;
+
+}

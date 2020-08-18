@@ -3,8 +3,8 @@
     <h1>상세보기 페이지</h1>
     <h3>상품명 : {{ post.title }} </h3><br>
     <h3>설명 : {{ post.content }} </h3><br>
-    <h3>가격 : {{ post.content }} </h3><br>
-    <h3>재고 : {{ post.content }} </h3><br>
+    <h3>가격 : {{ post.price }}원 </h3><br>
+    <h3>재고 : {{ post.stock }} </h3><br>
     <h3>작성 시각 : {{ post.created_at }} </h3><br>
     <h3>수정 시각 : {{ post.updated_at }} </h3><br>
     <h3>조회수 : {{ post.view_count }} </h3><br>
@@ -15,20 +15,20 @@
         <h3> 작성자 : 알수없음 </h3><br>
     {% endif %}
 
-
-
-
+    <!-- 이미지 파일 보이기 -->
     {% if post.image %}
 	    <img src ="{{ post.image.url }}">
     {%  endif %}
-<br>
+
+    <br>
+    
     {% if user == post.user %}
     <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary"> 수정 </a>
     <a href="{% url 'posts:delete' post.pk %}" class="btn btn-danger"> 삭제 </a>
     {% endif %}
 
     <a href="{% url 'posts:main'%}" class="btn btn-primary to-main"> To Main </a>
-    <a href="{% url 'reviews:main'%}" class="btn btn-primary to-main"> 상품후기 남기기 </a>
+    <a href="{% url 'reviews:new'%}" class="btn btn-primary to-main"> 상품후기 남기기 </a>
 
 
 

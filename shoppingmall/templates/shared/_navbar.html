@@ -1,94 +1,72 @@
- <nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'main' %}">SOJUNG MALL ꗯ</a>
-  <div>
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">BEST 30</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">SOJUNG MADE</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          TOP
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'posts:main' %}">니트/가디건</a>
-          <a class="dropdown-item" href="#">맨투맨/후드/티셔츠</a>
-          <a class="dropdown-item" href="#">셔츠/블라우스</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          BOTTOM
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">데님</a>
-          <a class="dropdown-item" href="#">면바지/슬랙스</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'reviews:main' %}">상품후기</a>
-      </li>
+<nav class="navbar fixed-top navbar-light" style="background-color:rgb(251,229,214);">
+  <a class="navbar-brand"  href="{% url 'main' %}">JMALL ꗯ</a>
 
-    </ul>
-  </div>
+  <ul class="nav align-items-center">
+    <li class="nav-item">
+      <a class="p-2 text-muted" href="#">BEST30</a>
+    </li>
 
-  <div>
-    <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="p-2 text-muted" href="#">MADE</a>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="p-2 text-muted" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            TOP▼</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'posts:main' %}">니트/가디건</a>
+        <a class="dropdown-item" href="#">맨투맨/후드/티셔츠</a>
+        <a class="dropdown-item" href="#">셔츠/블라우스</a>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="p-2 text-muted" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            BOTTOM▼</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'posts:main' %}">데님</a>
+        <a class="dropdown-item" href="#">면바지</a>
+        <a class="dropdown-item" href="#">쇼츠</a>
+        <a class="dropdown-item" href="#">롱</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="p-2 text-muted" href="{% url 'reviews:main' %}">상품후기</a>
+    </li>
+  </ul>  
+
+  <ul class="nav justify-content-end align-items-center">
+    <li class="nav-item">
+      
       {% if user.is_authenticated %}
 
-      <li class="nav-item">
-        <a class="nav-link" href="{%url 'account_logout' %}">로그아웃</a>
-      </li>
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'list:mypage' %}">MY PAGE</a>
+      <a class="btn btn-sm btn-outline-secondary" href="{%url 'account_logout' %}">Logout</a>
+      <a class="btn btn-sm btn-outline-secondary" href="#">CART</a>
+      <a class="btn btn-sm btn-outline-secondary" href="#">ORDER</a>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>    
 
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_change_password' %}">비밀번호 변경</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">ORDER</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">CART</a>
-      </li>
 
       {%else%}
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'list:login' %}">MY PAGE</a>
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'account_login' %}">Login</a>
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'account_signup' %}">Sign up</a>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>    
 
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_login' %}">로그인</a>
-      </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_signup' %}" >회원가입</a>
-      </li>
+      {% endif %}  
 
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'list:login' %}">ORDER</a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'list:login' %}">CART</a>
-      </li>
+    </li>
 
-      {% endif %}      
-      
-      
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </ul>
-
-    
-
-  </div>
-
-  
-
-  
+  </ul>
 
 </nav>
-
-
-

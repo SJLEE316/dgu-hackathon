@@ -4,6 +4,6 @@ from .views import *
 app_name="list"
 urlpatterns = [
     path('address', address, name="address"),
-    path('fax', fax, name="fax"),
+    path('mypage', mypage, name="mypage"),
     path('login', login, name="login"),
 ]

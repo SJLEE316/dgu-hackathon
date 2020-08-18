@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<h1>
+    Mypage
+    
+</h1>
+
+<a class="btn btn-sm btn-outline-secondary" href="{% url 'account_change_password' %}">비밀번호 변경</a>
+
+{% endblock %}
