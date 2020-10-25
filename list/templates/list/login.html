@@ -1,4 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
 <h1> 로그인 이후 이용 가능합니다.</h1>
 <a href="{% url 'account_login' %}" class="btn btn-warning"> 로그인</a>
 <a href="{% url 'account_signup' %}" class="btn btn-warning"> 회원가입</a>
+
+{% endblock %}
